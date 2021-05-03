@@ -1,0 +1,22 @@
+{
+  "name": "gpmeyers-nearbyplaces-api",
+  "version": "1.0.0",
+  "description": "serverside api for project mynearbyplaces for ISTA330 at the University of Arizona",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpmeyers/gpmeyers-nearbyplaces-api.git"
+  },
+  "author": "Graysen Meyers (gpmeyers@email.arizona.edu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpmeyers/gpmeyers-nearbyplaces-api/issues"
+  },
+  "homepage": "https://github.com/gpmeyers/gpmeyers-nearbyplaces-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
