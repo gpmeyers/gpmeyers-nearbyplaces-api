@@ -1,1 +1,1 @@
-# mynearbyplaces-serverside
+# gpmeyers-mynearbyplaces-api
