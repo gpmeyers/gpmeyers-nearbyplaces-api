@@ -5,7 +5,7 @@ const db = require('./db');
 
 // create the server
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 4000;
 
 // use cors
 let corsOptions = {
