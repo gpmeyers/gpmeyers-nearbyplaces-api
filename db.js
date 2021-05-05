@@ -37,8 +37,10 @@ let saveReview = (placeName, review) => {
 }
 
 let findPlace = (name, placelocation) => {
-    let sql = 'select name, placelocation from mynearbyplaces.places where (name=$s1) and (placelocation=$placelocation);';
-    return pool.query(sql, [name, placelocation])
+    let pattern1 = '%' + name + '%';
+    let pattern2 = '%' + placelocation + '%';
+    let sql = 'select name, placelocation from mynearbyplaces.places where (name like $s1) and (placelocation like $s2);';
+    return pool.query(sql, [pattern1, pattern2])
     .then(result => result.rows);
 }
 
