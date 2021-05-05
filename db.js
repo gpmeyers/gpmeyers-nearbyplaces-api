@@ -30,7 +30,10 @@ let getPlaces = () => {
 let saveReview = (placeName, review) => {
     let sql = 'select id from mynearbyplaces.places where (name=$s1);';
     let placeId = pool.query(sql, [placeName])
-    .then(result => {console.log(result)});
+    .then(result => result.rows[0].id);
+
+    return pool.query('insert into mynearbyplaces.reviews(placeid, review) values ($1, $2);', [placeId, review])
+    .then(() => {console.log('the review was saved')});
 }
 
 let findPlace = (name, placelocation) => {
