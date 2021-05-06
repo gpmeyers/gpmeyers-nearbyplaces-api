@@ -13,7 +13,7 @@ let corsOptions = {
     optionsSuccessStatus: 200 // For legacy browser support
 }
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse json
 app.use(express.json());
