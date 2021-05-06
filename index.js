@@ -32,7 +32,7 @@ app.get('/places', (req, res) => {
     .catch(e => {console.log(e); res.status(500).send('There was an error in finding the places')});
 });
 
-app.post('review/:placeName', (req, res) => {
+app.post('/review/:placeName', (req, res) => {
     let placeName = req.params.placeName;
     let review = req.body.review;
     db.saveReview(placeName, review)
