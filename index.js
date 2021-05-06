@@ -21,9 +21,9 @@ app.use(express.json());
 app.post('/place', (req, res) => {
     let name = req.body.name;
     let placelocation = req.body.placelocation;
-    db.savePlace(name, placelocation);
-
-    res.send(`The place ${name} was added successfully.`);
+    db.savePlace(name, placelocation)
+    .then(() => res.send(`The place ${name} was added successfully.`))
+    .catch(e => res.status(500).send(e));
 });
 
 app.get('/places', (req, res) => {
@@ -35,9 +35,9 @@ app.get('/places', (req, res) => {
 app.post('review/:placeName', (req, res) => {
     let placeName = req.params.placeName;
     let review = req.body.review;
-    db.saveReview(placeName, review);
-
-    res.send(`The review ${review} was added successfully.`);
+    db.saveReview(placeName, review)
+    .then(() => res.send(`The review ${review} was added successfully.`))
+    .catch(e => res.status(500).send(e));
 });
 
 app.get('/search/:placeName/:location', (req, res) => {
